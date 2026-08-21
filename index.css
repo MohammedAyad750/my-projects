@@ -1,0 +1,2228 @@
+/* =========================================================
+   MY PROJECTS PORTFOLIO
+   INDEX.CSS
+   ========================================================= */
+
+
+/* =========================================================
+   1. VARIABLES
+========================================================= */
+
+:root {
+
+    --bg-main: #000000;
+    --bg-secondary: #050505;
+    --bg-card: rgba(15, 15, 15, 0.90);
+
+    --text-main: #ffffff;
+    --text-secondary: #b8b8b8;
+    --text-muted: #777777;
+
+    --accent: #3b82f6;
+    --accent-hover: #60a5fa;
+
+    --orange: #f59e0b;
+    --orange-hover: #fbbf24;
+
+    --border: rgba(255, 255, 255, 0.12);
+    --border-strong: rgba(255, 255, 255, 0.25);
+
+    --shadow:
+        0 15px 45px rgba(0, 0, 0, 0.65);
+
+    --shadow-blue:
+        0 0 40px rgba(59, 130, 246, 0.18);
+
+    --shadow-orange:
+        0 0 40px rgba(245, 158, 11, 0.18);
+
+    --transition: 0.3s ease;
+
+    --max-width: 1200px;
+}
+
+
+/* =========================================================
+   2. RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   3. HTML
+========================================================= */
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+
+/* =========================================================
+   4. BODY
+========================================================= */
+
+body {
+
+    font-family:
+        "Segoe UI",
+        Tahoma,
+        Geneva,
+        Verdana,
+        sans-serif;
+
+    background:
+        var(--bg-main);
+
+    color:
+        var(--text-main);
+
+    line-height:
+        1.7;
+
+    min-height:
+        100vh;
+
+    overflow-x:
+        hidden;
+}
+
+
+/* =========================================================
+   5. TEXT SELECTION
+========================================================= */
+
+::selection {
+
+    background:
+        var(--orange);
+
+    color:
+        #000000;
+}
+
+
+/* =========================================================
+   6. CONTAINER
+========================================================= */
+
+.container {
+
+    width:
+        90%;
+
+    max-width:
+        var(--max-width);
+
+    margin:
+        0 auto;
+
+    padding:
+        0 15px;
+}
+
+
+/* =========================================================
+   7. DYNAMIC BACKGROUND
+========================================================= */
+
+.dynamic-background {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    overflow:
+        hidden;
+
+    pointer-events:
+        none;
+
+    z-index:
+        0;
+
+    background:
+
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(59, 130, 246, 0.08),
+            transparent 32%
+        ),
+
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(245, 158, 11, 0.06),
+            transparent 32%
+        ),
+
+        #000000;
+}
+
+
+/* =========================================================
+   8. SITE CONTENT
+========================================================= */
+
+.site-content {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    min-height:
+        100vh;
+}
+
+
+/* =========================================================
+   9. BACKGROUND GRID
+========================================================= */
+
+.background-grid {
+
+    position:
+        absolute;
+
+    inset:
+        -50%;
+
+    width:
+        200%;
+
+    height:
+        200%;
+
+    opacity:
+        0.20;
+
+    background-image:
+
+        linear-gradient(
+            rgba(255, 255, 255, 0.045) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.045) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        55px 55px;
+
+    transform:
+        perspective(700px)
+        rotateX(55deg)
+        translateY(-100px);
+
+    animation:
+        gridMove 25s linear infinite;
+}
+
+
+@keyframes gridMove {
+
+    0% {
+
+        transform:
+            perspective(700px)
+            rotateX(55deg)
+            translateY(-100px);
+
+    }
+
+    100% {
+
+        transform:
+            perspective(700px)
+            rotateX(55deg)
+            translateY(55px);
+
+    }
+}
+
+
+/* =========================================================
+   10. BACKGROUND GLOW
+========================================================= */
+
+.background-glow {
+
+    position:
+        absolute;
+
+    width:
+        450px;
+
+    height:
+        450px;
+
+    border-radius:
+        50%;
+
+    filter:
+        blur(100px);
+
+    opacity:
+        0.16;
+
+    animation:
+        glowMove 12s ease-in-out infinite alternate;
+}
+
+
+.glow-1 {
+
+    top:
+        5%;
+
+    left:
+        5%;
+
+    background:
+        #2563eb;
+}
+
+
+.glow-2 {
+
+    right:
+        5%;
+
+    bottom:
+        5%;
+
+    background:
+        #f59e0b;
+
+    animation-delay:
+        -6s;
+}
+
+
+@keyframes glowMove {
+
+    0% {
+
+        transform:
+            translate3d(0, 0, 0)
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            translate3d(100px, 60px, 0)
+            scale(1.15);
+
+    }
+
+    100% {
+
+        transform:
+            translate3d(-60px, 120px, 0)
+            scale(0.95);
+
+    }
+}
+
+
+/* =========================================================
+   11. BACKGROUND PARTICLES
+========================================================= */
+
+.background-particle {
+
+    position:
+        absolute;
+
+    width:
+        5px;
+
+    height:
+        5px;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(255, 255, 255, 0.75);
+
+    box-shadow:
+        0 0 14px rgba(255, 255, 255, 0.65);
+
+    animation:
+        particleFloat 8s ease-in-out infinite;
+}
+
+
+.particle-1 {
+
+    top:
+        20%;
+
+    left:
+        15%;
+
+    animation-delay:
+        0s;
+}
+
+
+.particle-2 {
+
+    top:
+        70%;
+
+    left:
+        30%;
+
+    animation-delay:
+        -2s;
+}
+
+
+.particle-3 {
+
+    top:
+        30%;
+
+    right:
+        20%;
+
+    animation-delay:
+        -4s;
+}
+
+
+.particle-4 {
+
+    bottom:
+        20%;
+
+    right:
+        10%;
+
+    animation-delay:
+        -6s;
+}
+
+
+.particle-5 {
+
+    top:
+        50%;
+
+    left:
+        50%;
+
+    animation-delay:
+        -3s;
+}
+
+
+@keyframes particleFloat {
+
+    0% {
+
+        transform:
+            translate(0, 0);
+
+        opacity:
+            0.2;
+    }
+
+    50% {
+
+        transform:
+            translate(30px, -40px);
+
+        opacity:
+            0.9;
+    }
+
+    100% {
+
+        transform:
+            translate(-20px, 20px);
+
+        opacity:
+            0.25;
+    }
+}
+
+
+/* =========================================================
+   12. HEADER
+========================================================= */
+
+header {
+
+    position:
+        sticky;
+
+    top:
+        0;
+
+    z-index:
+        100;
+
+    background:
+        rgba(0, 0, 0, 0.82);
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+    border-bottom:
+        1px solid var(--border);
+
+    padding:
+        18px 0;
+}
+
+
+.header-container {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    gap:
+        20px;
+
+    flex-wrap:
+        wrap;
+}
+
+
+header h1 {
+
+    font-size:
+        26px;
+
+    font-weight:
+        900;
+
+    color:
+        var(--text-main);
+
+    letter-spacing:
+        0.5px;
+}
+
+
+/* =========================================================
+   13. NAVIGATION
+========================================================= */
+
+nav {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        28px;
+
+    flex-wrap:
+        wrap;
+}
+
+
+nav a {
+
+    position:
+        relative;
+
+    color:
+        var(--text-secondary);
+
+    text-decoration:
+        none;
+
+    font-size:
+        16px;
+
+    font-weight:
+        600;
+
+    transition:
+        color var(--transition);
+}
+
+
+nav a::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    right:
+        0;
+
+    bottom:
+        -7px;
+
+    width:
+        0;
+
+    height:
+        2px;
+
+    background:
+        var(--orange);
+
+    transition:
+        width var(--transition);
+}
+
+
+nav a:hover {
+
+    color:
+        var(--text-main);
+}
+
+
+nav a:hover::after {
+
+    width:
+        100%;
+}
+
+
+/* =========================================================
+   14. HERO
+========================================================= */
+
+.hero {
+
+    position:
+        relative;
+
+    min-height:
+        85vh;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    text-align:
+        center;
+
+    padding:
+        100px 0 110px;
+
+    border-bottom:
+        1px solid var(--border);
+
+    overflow:
+        hidden;
+}
+
+
+.hero::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        550px;
+
+    height:
+        550px;
+
+    top:
+        50%;
+
+    left:
+        50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(59, 130, 246, 0.10),
+            transparent 65%
+        );
+
+    pointer-events:
+        none;
+}
+
+
+.hero .container {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+}
+
+
+/* =========================================================
+   15. PROFILE IMAGE
+========================================================= */
+
+.profile-img {
+
+    width:
+        175px;
+
+    height:
+        175px;
+
+    object-fit:
+        cover;
+
+    border-radius:
+        50%;
+
+    display:
+        block;
+
+    margin:
+        0 auto 30px;
+
+    border:
+        3px solid var(--orange);
+
+    box-shadow:
+
+        0 0 0 8px rgba(245, 158, 11, 0.05),
+
+        0 0 45px rgba(245, 158, 11, 0.30);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+
+.profile-img:hover {
+
+    transform:
+        scale(1.05);
+
+    box-shadow:
+
+        0 0 0 10px rgba(245, 158, 11, 0.07),
+
+        0 0 65px rgba(245, 158, 11, 0.45);
+}
+
+
+/* =========================================================
+   16. HERO TITLE
+========================================================= */
+
+.hero h2 {
+
+    position:
+        relative;
+
+    font-size:
+        clamp(34px, 5vw, 58px);
+
+    font-weight:
+        900;
+
+    line-height:
+        1.2;
+
+    margin-bottom:
+        22px;
+
+    color:
+        var(--text-main);
+}
+
+
+/* =========================================================
+   17. HERO DESCRIPTION
+========================================================= */
+
+.hero p {
+
+    position:
+        relative;
+
+    max-width:
+        800px;
+
+    margin:
+        0 auto 35px;
+
+    font-size:
+        clamp(17px, 2vw, 21px);
+
+    color:
+        var(--text-secondary);
+
+    line-height:
+        1.9;
+}
+
+
+/* =========================================================
+   18. BUTTON
+========================================================= */
+
+.btn {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    min-height:
+        48px;
+
+    padding:
+        12px 30px;
+
+    border-radius:
+        10px;
+
+    background:
+        var(--orange);
+
+    color:
+        #000000;
+
+    text-decoration:
+        none;
+
+    font-family:
+        inherit;
+
+    font-size:
+        16px;
+
+    font-weight:
+        800;
+
+    border:
+        1px solid var(--orange);
+
+    cursor:
+        pointer;
+
+    transition:
+        transform var(--transition),
+        background var(--transition),
+        box-shadow var(--transition);
+}
+
+
+.btn:hover {
+
+    background:
+        var(--orange-hover);
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        var(--shadow-orange);
+}
+
+
+.btn:active {
+
+    transform:
+        translateY(-1px);
+}
+
+
+.btn-small {
+
+    min-height:
+        42px;
+
+    padding:
+        9px 18px;
+
+    font-size:
+        14px;
+
+    border-radius:
+        8px;
+}
+
+
+/* =========================================================
+   19. PROJECT SECTION
+========================================================= */
+
+.projects {
+
+    position:
+        relative;
+
+    padding:
+        100px 0;
+}
+
+
+.project-section {
+
+    border-bottom:
+        1px solid var(--border);
+}
+
+
+.iot-section {
+
+    background:
+        rgba(4, 4, 4, 0.45);
+}
+
+
+/* =========================================================
+   20. PROJECT SECTION HEADER
+========================================================= */
+
+.project-section-header {
+
+    text-align:
+        center;
+
+    max-width:
+        850px;
+
+    margin:
+        0 auto 55px;
+}
+
+
+.project-section-label {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        7px 16px;
+
+    margin-bottom:
+        18px;
+
+    border:
+        1px solid rgba(59, 130, 246, 0.35);
+
+    border-radius:
+        30px;
+
+    background:
+        rgba(59, 130, 246, 0.08);
+
+    color:
+        var(--accent-hover);
+
+    font-size:
+        12px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        1.5px;
+}
+
+
+/* =========================================================
+   21. SECTION TITLE
+========================================================= */
+
+.section-title {
+
+    text-align:
+        center;
+
+    font-size:
+        clamp(30px, 4vw, 42px);
+
+    font-weight:
+        900;
+
+    color:
+        var(--text-main);
+
+    margin-bottom:
+        18px;
+}
+
+
+.section-title::after {
+
+    content:
+        "";
+
+    display:
+        block;
+
+    width:
+        70px;
+
+    height:
+        4px;
+
+    margin:
+        14px auto 0;
+
+    border-radius:
+        20px;
+
+    background:
+        var(--orange);
+}
+
+
+.section-description {
+
+    max-width:
+        720px;
+
+    margin:
+        0 auto;
+
+    color:
+        var(--text-secondary);
+
+    font-size:
+        17px;
+
+    line-height:
+        1.9;
+}
+
+
+/* =========================================================
+   22. PROJECT GRID
+========================================================= */
+
+.projects-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(280px, 1fr)
+        );
+
+    gap:
+        30px;
+}
+
+
+/* =========================================================
+   23. PROJECT CARD
+========================================================= */
+
+.project-card {
+
+    position:
+        relative;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    overflow:
+        hidden;
+
+    background:
+        var(--bg-card);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        16px;
+
+    box-shadow:
+        var(--shadow);
+
+    backdrop-filter:
+        blur(10px);
+
+    -webkit-backdrop-filter:
+        blur(10px);
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+.project-card:hover {
+
+    transform:
+        translateY(-10px);
+
+    border-color:
+        rgba(59, 130, 246, 0.55);
+
+    box-shadow:
+
+        var(--shadow),
+
+        var(--shadow-blue);
+}
+
+
+/* =========================================================
+   24. PROJECT IMAGE
+========================================================= */
+
+.project-card > img {
+
+    width:
+        100%;
+
+    height:
+        220px;
+
+    object-fit:
+        cover;
+
+    display:
+        block;
+
+    border-bottom:
+        1px solid var(--border);
+
+    transition:
+        transform 0.5s ease;
+}
+
+
+.project-card:hover > img {
+
+    transform:
+        scale(1.04);
+}
+
+
+/* =========================================================
+   25. CARD CONTENT
+========================================================= */
+
+.card-content {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    flex-grow:
+        1;
+
+    padding:
+        22px;
+}
+
+
+.project-category {
+
+    display:
+        inline-block;
+
+    width:
+        fit-content;
+
+    margin-bottom:
+        10px;
+
+    color:
+        var(--accent-hover);
+
+    font-size:
+        12px;
+
+    font-weight:
+        800;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        0.8px;
+}
+
+
+.card-content h3 {
+
+    font-size:
+        22px;
+
+    font-weight:
+        800;
+
+    color:
+        var(--text-main);
+
+    margin-bottom:
+        10px;
+}
+
+
+.card-content p {
+
+    flex-grow:
+        1;
+
+    color:
+        var(--text-secondary);
+
+    font-size:
+        15px;
+
+    line-height:
+        1.8;
+
+    margin-bottom:
+        22px;
+}
+
+
+.card-content .btn {
+
+    align-self:
+        flex-start;
+}
+
+
+/* =========================================================
+   26. PROJECT MODAL
+========================================================= */
+
+.project-modal {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    z-index:
+        1000;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        30px;
+
+    opacity:
+        0;
+
+    visibility:
+        hidden;
+
+    pointer-events:
+        none;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+
+/* Modal Open */
+
+.project-modal.active {
+
+    opacity:
+        1;
+
+    visibility:
+        visible;
+
+    pointer-events:
+        auto;
+}
+
+
+/* =========================================================
+   27. MODAL OVERLAY
+========================================================= */
+
+.modal-overlay {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    background:
+        rgba(0, 0, 0, 0.88);
+
+    backdrop-filter:
+        blur(12px);
+
+    -webkit-backdrop-filter:
+        blur(12px);
+}
+
+
+/* =========================================================
+   28. MODAL CONTENT
+========================================================= */
+
+.modal-content {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    width:
+        100%;
+
+    max-width:
+        900px;
+
+    max-height:
+        90vh;
+
+    overflow-y:
+        auto;
+
+    background:
+        #080808;
+
+    border:
+        1px solid var(--border-strong);
+
+    border-radius:
+        18px;
+
+    box-shadow:
+        0 30px 100px rgba(0, 0, 0, 0.85);
+
+    transform:
+        translateY(25px)
+        scale(0.97);
+
+    transition:
+        transform 0.35s ease;
+}
+
+
+.project-modal.active .modal-content {
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+/* =========================================================
+   29. MODAL SCROLLBAR
+========================================================= */
+
+.modal-content::-webkit-scrollbar {
+
+    width:
+        7px;
+}
+
+
+.modal-content::-webkit-scrollbar-track {
+
+    background:
+        #050505;
+}
+
+
+.modal-content::-webkit-scrollbar-thumb {
+
+    background:
+        #333;
+
+    border-radius:
+        20px;
+}
+
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+
+    background:
+        var(--accent);
+}
+
+
+/* =========================================================
+   30. MODAL CLOSE
+========================================================= */
+
+.modal-close {
+
+    position:
+        absolute;
+
+    top:
+        15px;
+
+    left:
+        15px;
+
+    z-index:
+        5;
+
+    width:
+        42px;
+
+    height:
+        42px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.20);
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(0, 0, 0, 0.75);
+
+    color:
+        #ffffff;
+
+    font-size:
+        28px;
+
+    line-height:
+        1;
+
+    cursor:
+        pointer;
+
+    transition:
+        background var(--transition),
+        color var(--transition),
+        transform var(--transition);
+}
+
+
+.modal-close:hover {
+
+    background:
+        #ffffff;
+
+    color:
+        #000000;
+
+    transform:
+        rotate(90deg);
+}
+
+
+/* =========================================================
+   31. MODAL MAIN IMAGE
+========================================================= */
+
+.modal-main-image {
+
+    width:
+        100%;
+
+    height:
+        360px;
+
+    display:
+        block;
+
+    object-fit:
+        cover;
+
+    border-bottom:
+        1px solid var(--border);
+}
+
+
+/* =========================================================
+   32. MODAL BODY
+========================================================= */
+
+.modal-body {
+
+    padding:
+        35px;
+}
+
+
+.modal-body .project-category {
+
+    margin-bottom:
+        8px;
+}
+
+
+.modal-body h2 {
+
+    font-size:
+        clamp(28px, 4vw, 40px);
+
+    font-weight:
+        900;
+
+    color:
+        var(--text-main);
+
+    margin-bottom:
+        30px;
+}
+
+
+.modal-body h3 {
+
+    font-size:
+        21px;
+
+    font-weight:
+        800;
+
+    color:
+        var(--text-main);
+
+    margin-top:
+        28px;
+
+    margin-bottom:
+        10px;
+
+    padding-right:
+        12px;
+
+    border-right:
+        3px solid var(--orange);
+}
+
+
+.modal-body p {
+
+    color:
+        var(--text-secondary);
+
+    font-size:
+        16px;
+
+    line-height:
+        2;
+
+    margin-bottom:
+        15px;
+}
+
+
+/* =========================================================
+   33. PROJECT DETAILS LIST
+========================================================= */
+
+.project-details-list {
+
+    list-style:
+        none;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(180px, 1fr)
+        );
+
+    gap:
+        12px;
+
+    margin:
+        15px 0 25px;
+}
+
+
+.project-details-list li {
+
+    padding:
+        12px 15px;
+
+    background:
+        rgba(255, 255, 255, 0.04);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        9px;
+
+    color:
+        var(--text-secondary);
+
+    font-size:
+        14px;
+
+    transition:
+        border-color var(--transition),
+        background var(--transition);
+}
+
+
+.project-details-list li:hover {
+
+    border-color:
+        rgba(59, 130, 246, 0.45);
+
+    background:
+        rgba(59, 130, 246, 0.06);
+
+    color:
+        var(--text-main);
+}
+
+
+/* =========================================================
+   34. PROJECT GALLERY
+========================================================= */
+
+.project-gallery {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(200px, 1fr)
+        );
+
+    gap:
+        15px;
+
+    margin:
+        20px 0 30px;
+}
+
+
+.project-gallery img {
+
+    width:
+        100%;
+
+    height:
+        180px;
+
+    object-fit:
+        cover;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        10px;
+
+    cursor:
+        pointer;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.project-gallery img:hover {
+
+    transform:
+        scale(1.03);
+
+    border-color:
+        var(--accent);
+}
+
+
+/* =========================================================
+   35. BODY LOCK WHEN MODAL IS OPEN
+========================================================= */
+
+body.modal-open {
+
+    overflow:
+        hidden;
+}
+
+
+/* =========================================================
+   36. CONTACT
+========================================================= */
+
+.contact {
+
+    position:
+        relative;
+
+    padding:
+        100px 0;
+
+    text-align:
+        center;
+
+    background:
+        rgba(5, 5, 5, 0.75);
+
+    border-top:
+        1px solid var(--border);
+
+    border-bottom:
+        1px solid var(--border);
+
+    backdrop-filter:
+        blur(10px);
+
+    -webkit-backdrop-filter:
+        blur(10px);
+}
+
+
+.contact h2 {
+
+    font-size:
+        clamp(30px, 4vw, 40px);
+
+    font-weight:
+        900;
+
+    margin-bottom:
+        15px;
+}
+
+
+.contact p {
+
+    font-size:
+        18px;
+
+    color:
+        var(--text-secondary);
+
+    margin-bottom:
+        28px;
+}
+
+
+/* =========================================================
+   37. FOOTER
+========================================================= */
+
+footer {
+
+    background:
+        #000000;
+
+    color:
+        var(--text-muted);
+
+    text-align:
+        center;
+
+    padding:
+        25px 0;
+
+    border-top:
+        1px solid var(--border);
+
+    font-size:
+        14px;
+}
+
+
+/* =========================================================
+   38. MAIN SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+
+    width:
+        9px;
+}
+
+
+::-webkit-scrollbar-track {
+
+    background:
+        #000000;
+}
+
+
+::-webkit-scrollbar-thumb {
+
+    background:
+        #333333;
+
+    border-radius:
+        20px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+
+    background:
+        var(--accent);
+}
+
+
+/* =========================================================
+   39. FOCUS ACCESSIBILITY
+========================================================= */
+
+button:focus-visible,
+a:focus-visible {
+
+    outline:
+        3px solid var(--orange);
+
+    outline-offset:
+        4px;
+}
+
+
+/* =========================================================
+   40. TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .container {
+
+        width:
+            94%;
+
+        padding:
+            0 10px;
+    }
+
+
+    header {
+
+        padding:
+            14px 0;
+    }
+
+
+    .header-container {
+
+        justify-content:
+            center;
+
+        text-align:
+            center;
+    }
+
+
+    header h1 {
+
+        width:
+            100%;
+
+        font-size:
+            23px;
+    }
+
+
+    nav {
+
+        justify-content:
+            center;
+
+        gap:
+            18px;
+    }
+
+
+    nav a {
+
+        font-size:
+            14px;
+    }
+
+
+    .hero {
+
+        min-height:
+            80vh;
+
+        padding:
+            80px 0;
+    }
+
+
+    .profile-img {
+
+        width:
+            145px;
+
+        height:
+            145px;
+    }
+
+
+    .projects {
+
+        padding:
+            75px 0;
+    }
+
+
+    .project-section-header {
+
+        margin-bottom:
+            40px;
+    }
+
+
+    .projects-grid {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            22px;
+    }
+
+
+    .project-card > img {
+
+        height:
+            210px;
+    }
+
+
+    .project-modal {
+
+        padding:
+            15px;
+    }
+
+
+    .modal-content {
+
+        max-height:
+            94vh;
+
+        border-radius:
+            14px;
+    }
+
+
+    .modal-main-image {
+
+        height:
+            260px;
+    }
+
+
+    .modal-body {
+
+        padding:
+            25px 20px;
+    }
+
+
+    .project-gallery {
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+    .contact {
+
+        padding:
+            75px 0;
+    }
+
+
+    .background-grid {
+
+        background-size:
+            40px 40px;
+    }
+
+
+    .background-glow {
+
+        width:
+            300px;
+
+        height:
+            300px;
+
+        filter:
+            blur(80px);
+    }
+
+}
+
+
+/* =========================================================
+   41. MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    nav {
+
+        gap:
+            12px;
+    }
+
+
+    nav a {
+
+        font-size:
+            12px;
+    }
+
+
+    .hero h2 {
+
+        font-size:
+            32px;
+    }
+
+
+    .hero p {
+
+        font-size:
+            16px;
+
+        line-height:
+            1.8;
+    }
+
+
+    .project-section-label {
+
+        font-size:
+            10px;
+
+        letter-spacing:
+            1px;
+    }
+
+
+    .section-title {
+
+        font-size:
+            29px;
+    }
+
+
+    .section-description {
+
+        font-size:
+            15px;
+    }
+
+
+    .project-card > img {
+
+        height:
+            180px;
+    }
+
+
+    .card-content {
+
+        padding:
+            18px;
+    }
+
+
+    .card-content h3 {
+
+        font-size:
+            20px;
+    }
+
+
+    .modal-main-image {
+
+        height:
+            210px;
+    }
+
+
+    .modal-body {
+
+        padding:
+            22px 17px;
+    }
+
+
+    .modal-body h2 {
+
+        font-size:
+            28px;
+    }
+
+
+    .modal-body h3 {
+
+        font-size:
+            19px;
+    }
+
+
+    .modal-body p {
+
+        font-size:
+            15px;
+
+        line-height:
+            1.9;
+    }
+
+
+    .project-details-list {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .project-gallery {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .project-gallery img {
+
+        height:
+            200px;
+    }
+
+
+    .modal-close {
+
+        width:
+            38px;
+
+        height:
+            38px;
+
+        font-size:
+            24px;
+    }
+
+
+    .filter-btn {
+
+        width:
+            100%;
+
+        max-width:
+            280px;
+    }
+
+}
+
+
+/* =========================================================
+   42. REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            0.01ms !important;
+
+        scroll-behavior:
+            auto !important;
+    }
+
+}
